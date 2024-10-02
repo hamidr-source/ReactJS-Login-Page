@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { db } from "../src/db/db";
-import { useLiveQuery } from "dexie-react-hooks";
-import SignIn from "./pages/register/sign-in/SignIn";
+import LoginRouter from "./router/router";
 
 const App = () => {
- return (
-  <>
-  <SignIn />
-  </>
- )
-
+  return (
+    <>
+      <LoginRouter />
+    </>
+  );
 };
 
 export default App;
