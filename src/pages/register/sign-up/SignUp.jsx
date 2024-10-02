@@ -33,7 +33,7 @@ const SignUp = () => {
 
   return (
     <div className="login-page">
-      <div className="form">
+      <div className="form" onSubmit={(e) => handleAddUser(e)}>
         <form className="login-form">
           <input
             type="text"
@@ -56,8 +56,8 @@ const SignUp = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
-          <button onClick={(e) => handleAddUser(e)}>login</button>
-          <p className="message">Not registered?</p>
+          <button>login</button>
+          <p className="message">Not registered? <Link to="/sign-in">Create an account</Link></p>
         </form>
       </div>
     </div>
