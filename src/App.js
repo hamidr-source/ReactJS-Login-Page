@@ -1,9 +1,11 @@
-
-import './App.css';
+import "./App.css";
+import SignIn from "./pages/register/sign-in/SignIn";
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <>
+      <SignIn />
+    </>
   );
 }
 
