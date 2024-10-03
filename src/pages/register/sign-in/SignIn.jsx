@@ -1,14 +1,13 @@
 import React from "react";
 import { db } from "../../../db/db";
 import { useLiveQuery } from "dexie-react-hooks";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useInput } from "../../../hooks/useInput";
 
 const SignIn = () => {
   const [username, resetUsername] = useInput("");
   const users = useLiveQuery(() => db.user.toArray());
   const navigate = useNavigate();
-  console.log(navigate);
 
   function handleSignIn(e) {
     e.preventDefault();
@@ -46,7 +45,10 @@ const SignIn = () => {
           />
           <input type="email" className="email-input" placeholder="email" />
           <button onClick={(e) => handleSignIn(e)}>login</button>
-          <p className="message">Already have an account?</p>
+          <p className="message">
+            Not registered?
+            <Link to="/sign-up">Create account</Link>
+          </p>
         </form>
       </div>
     </div>

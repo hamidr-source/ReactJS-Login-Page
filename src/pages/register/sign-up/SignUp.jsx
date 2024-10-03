@@ -60,7 +60,7 @@ const SignUp = () => {
           />
           <button>login</button>
           <p className="message">
-            Not registered? <Link to="/sign-in">Create an account</Link>
+            Already have an account? <Link to="/sign-in">Sign In</Link>
           </p>
         </form>
       </div>

@@ -8,7 +8,7 @@ const LoginRouter = () => {
     <Router>
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/" element={<SignUp />} />
+        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
     </Router>
   );
