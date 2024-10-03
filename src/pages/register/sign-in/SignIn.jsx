@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { db } from "../../../db/db";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useNavigate } from "react-router-dom";
-import SignUp from "../sign-up/SignUp";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
@@ -19,7 +18,7 @@ const SignIn = () => {
 
     users?.forEach((user) => {
       if (
-        currentUser.password === user.password ||
+        currentUser.password === user.password &&
         currentUser.email === user.email
       ) {
         navigate("/dashboard");
