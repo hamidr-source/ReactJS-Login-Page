@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { db } from "../../../db/db";
 import "../style.css";
 import { Link } from "react-router-dom";
@@ -16,7 +16,6 @@ const SignUp = () => {
     const passwordValue = passwordProps.value;
     const emailValue = emailProps.value;
 
-    console.log(usernameValue, passwordValue, emailValue)
     try {
       let id;
       if (usernameValue && emailValue) {

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { db } from "../../../db/db";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useNavigate } from "react-router-dom";
+import { useInput } from "../../../hooks/useInput";
 
 const SignIn = () => {
-  const [username, setUsername] = useState("");
+  const [username, resetUsername] = useInput("");
   const users = useLiveQuery(() => db.user.toArray());
   const navigate = useNavigate();
   console.log(navigate);
@@ -13,7 +14,7 @@ const SignIn = () => {
     e.preventDefault();
 
     let currentUser = users?.find((user) => {
-      return user.name === username;
+      return user.name === username.value;
     });
 
     users?.forEach((user) => {
@@ -24,6 +25,8 @@ const SignIn = () => {
         navigate("/dashboard");
       }
     });
+
+    resetUsername();
   }
 
   return (
@@ -34,8 +37,7 @@ const SignIn = () => {
             type="text"
             className="username-input"
             placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            {...username}
           />
           <input
             type="password"
