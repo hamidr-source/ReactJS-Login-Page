@@ -13,13 +13,15 @@ const SignIn = () => {
     e.preventDefault();
 
     let currentUser = users?.find((user) => {
-      return user.name === username.value;
+      return user.usernameValue === username.value;
     });
 
     users?.forEach((user) => {
-      if (
-        currentUser.password === user.password &&
-        currentUser.email === user.email
+      if (!currentUser) {
+        navigate("/sign-up");
+      } else if (
+        currentUser.passwordValue === user.passwordValue &&
+        currentUser.emailValue === user.emailValue
       ) {
         navigate("/dashboard");
       }
