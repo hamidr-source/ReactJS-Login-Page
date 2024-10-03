@@ -22,7 +22,7 @@ const SignIn = () => {
         currentUser.password === user.password ||
         currentUser.email === user.email
       ) {
-        navigate("/");
+        navigate("/dashboard");
       }
     });
   }
