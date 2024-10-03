@@ -49,7 +49,7 @@ const SignIn = () => {
           <button onClick={(e) => handleSignIn(e)}>login</button>
           <p className="message">
             Not registered?
-            <Link to="/sign-up">Create account</Link>
+            <Link to="/sign-up"> Create account</Link>
           </p>
         </form>
       </div>
